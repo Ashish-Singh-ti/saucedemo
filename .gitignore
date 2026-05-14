@@ -1,0 +1,9 @@
+auth_state.json
+
+report.html
+
+.env
+
+__pycache__/
+*.pyc
+.pytest_cache/
