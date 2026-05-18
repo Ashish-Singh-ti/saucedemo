@@ -10,7 +10,7 @@ from pages.productspage import ProductPage
 
 @pytest.fixture(scope="session")
 def auth_state(playwright):
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
 
@@ -27,7 +27,7 @@ def auth_state(playwright):
 
 @pytest.fixture
 def logged_in_page(playwright, auth_state):
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context(storage_state=auth_state)
     page = context.new_page()
     page.goto("https://saucedemo.com/inventory.html")
